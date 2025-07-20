@@ -134,7 +134,7 @@ fan:
       - script.wait: set_timer
       - script.execute:
           id: set_mode
-          mode: "Timer"
+          mode: "TH"
       - script.wait: set_mode
     on_turn_on:
       - logger.log: "Turning on timer"
