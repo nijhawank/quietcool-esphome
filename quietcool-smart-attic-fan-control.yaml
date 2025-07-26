@@ -116,7 +116,6 @@ script:
 # - Two speed levels (LOW/HIGH)
 # - Timer-based operation
 # - State restoration after power loss
-# speed: !lambda 'return x == 2 ? "MEDIUM" : "LOW";'
 fan:
   - platform: template
     name: "QuietCool Fan"
@@ -179,8 +178,6 @@ number:
           hours: !lambda return x;
           minutes: !lambda return id(timer_minutes).state;
           speed: &set_timer_speed !lambda 'return id(quietcool_fan).speed == 3 ? "HIGH" : (id(quietcool_fan).speed == 2 ? "MEDIUM" : "LOW");'
-# 'return id(quietcool_fan).speed == 2 ? "HIGH" : "LOW";'
-
   - platform: template
     name: "Timer Minutes"
     id: timer_minutes
